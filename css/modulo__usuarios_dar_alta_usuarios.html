@@ -1,0 +1,221 @@
+<?php require_once('conexion.php'); ?>
+
+<!DOCTYPE html>
+<html lang="es-mx" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Centro de Ingeniería y Tecnología de Rehabilitación">
+    <meta name="description" content="Somos un centro interdisciplinario académico de servicio y de investigación líder en el diseño fabricación y provisión de tecnología de rehabilitación">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="language" content="Spanish">
+    <meta name="author" content="Cecilia Santiago, Daniela Chavez, Isabella Fischelt y  Mariana Romo">
+    <title>Administrador: CITeR</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="imagenes/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="imagenes/favicon_io/site.webmanifest">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos-modulo-ayudas-dar-alta-usuario.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $dato[0];?>css/styles.css">
+    <link rel="stylesheet" href="<?php echo $dato[0]; ?>css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/5637dd924f.js" crossorigin="anonymous"></script>
+    
+</head>
+    <body>
+        <div class="body">
+            <div class="main-head">   
+           <?php include('inc/header.php'); ?>
+            </div>
+            <div class="div-top">
+            <p><a><i class="fas fa-book"></i> Manual de Usuario</a></p>
+            <p><a><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></p>
+            </div>
+    <main>
+        <section aria-current="page">
+            <div class="breadcrumb"  role="complementary">
+                <h2><a>Módulo de <br>Usuarios</a></h2>
+                <p class="fas-fa01"><i class="fas fa-chevron-right"></i></p>
+                <p class="breadcrumb02">Dar de alta<br>nuevo usuario</p>
+            </div>
+            <p class="info">Aquí podrá dar de alta la información de  un usuario/a</p>
+                <form onsubmit="return false" class="formulario" id="formRegistro">
+                    <fieldset class="datos-personales">
+                    <legend>1. Datos Personales</legend>
+                        <div class="nombre">
+                        <label for="nombre">Nombre:</label><br>
+                        <input type="text" id="nombre" name="nombre"  minlength="4" maxlength="30" size="30">
+                        </div>
+                        <div class="usuario">
+                        <label for="usuario">Usuario:</label><br>
+                        <input type="text" id="usuario" name="usuario"  minlength="4" maxlength="30" size="30">
+                        </div>
+                        <div class="correo">
+                         <label for="email">Correo Electrónico:</label><br>
+                        <input type="email" id="email" name="email" pattern=".+@globex.com" size="30" >
+                        </div>
+                        <div class="contra">
+                        <label for="contraseña">Contraseña:
+                        </label><br>
+                        <input type="password" id="pass1" name="pass1" minlength="8" >
+                        </div>
+                        <div class="tel">
+                        <label for="telefono">Télefono:</label><br>
+                        <input type="tel" id="telefono" name="telefono" >
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="datos-generales">
+                        <legend>2. Datos Generales:</legend>
+                        
+                        <div class="genero">
+                        <label for="genero">Género:</label><br>
+                        <div class="femenino">
+                        <input type="radio" id="MUJER" name="genero" value="MUJER"
+                                checked>
+                        <label for="MUJER">Femenino</label>
+                        </div>
+                        <div class="masculino">
+                        <input type="radio" id="HOMBRE" name="genero" value="HOMBRE">
+                        <label for="HOMBRE">Masculino</label>
+                        </div>
+                        <div class="otro">
+                        <input type="radio" id="OTRO" name="genero" value="OTRO">
+                        <label for="OTRO">Otro</label>
+                        </div>
+
+                        </div>
+                        <div class="estudios">
+
+                        <label for="estudios">Nivel de estudios:</label>
+
+                            <div class="prescolar">
+                            <input type="radio" id="prescolar" name="estudios" value="prescolar"
+                                    checked>
+                            <label for="prescolar">Prescolar</label>
+                            </div>
+
+                            <div class="primaria">
+                            <input type="radio" id="primaria" name="estudios" value="primaria">
+                            <label for="primaria">Primaria</label>
+                            </div>
+
+                            <div class="secundaria">
+                            <input type="radio" id="secundaria" name="estudios" value="secundaria">
+                            <label for="secundaria">Secundaria</label>
+                            </div>
+                            <div class="media-superior">
+                            <input type="radio" id="media superior" name="estudios" value="media superior">
+                            <label for="media superior">Media superior</label>
+                            </div>
+                            <div class="superior">
+                            <input type="radio" id="superior" name="estudios" value="superior">
+                            <label for="superior">Superior</label>
+                            </div>
+                            <div class="maestria">
+                            <input type="radio" id="maestria" name="estudios" value="maestria">
+                            <label for="maestria">Maestria</label>
+                            </div>
+                            <div class="doctorado">
+                            <input type="radio" id="doctorado" name="estudios" value="doctorado">
+                            <label for="doctorado">Doctorado</label>
+                            </div>
+                            <div class="posgrado">
+                            <input type="radio" id="posgrado" name="estudios" value="posgrado">
+                            <label for="posgrado">Posgrado</label>
+                            </div>
+                        </div>
+                        <div class="nacimiento">
+                        <label for="nacimiento">Fecha de nacimiento:</label><br>
+                        <input type="date" id="nacimiento" name="nacimiento"
+                        value="2020-07-22" min="1000-01-01" max="2040-12-31">
+                        </div>
+                        <div class="direccion">
+                        <label for="direccion">Dirección:</label><br>
+                        <input type="text" id="direccion" name="direccion"  minlength="4" maxlength="70" size="70">
+                        </div> 
+                    </fieldset>
+                    <fieldset class="otros-datos">
+                        <legend>3. Otros datos:</legend>
+                            <div class="diagnostico">
+                                <label>Diagnóstico</label>
+                                <textarea name="diagnostico" id="diagnostico" rows="10" cols="50"></textarea>
+                            </div>
+                        <div class="enteraste">
+                        <label>Como te enteraste del CITeR</label>
+                        <div class="familiar">
+                        <input type="radio" id="familiar" name="citer" value="familiar"
+                                checked>
+                        <label for="familiar">Familiar</label>
+                        </div>
+
+                        <div class="internet">
+                        <input type="radio" id="internet" name="citer" value="internet">
+                        <label for="internet">Internet</label>
+                        </div>
+
+                        <div class="especialista">
+                        <input type="radio" id="especialista" name="citer" value="especialista">
+                        <label for="especialista">Especialista</label>
+                        </div>
+
+                        <div class="otro">
+                        <input type="radio" id="cotro" name="citer" value="cotro">
+                        <label for="cotro">Otro</label>
+                        </div>
+                        
+                        </div> 
+                    </fieldset>
+                    <fieldset class="datos-familiares">
+                        <legend>4. Datos de familiar de emergencia</legend>
+                        <div class="nombre01">
+                            <label for="nombre">Nombre:</label><br>
+                        <input type="text" id="nombref" name="nombref"  minlength="4" maxlength="30" size="30">
+                        </div>
+                        <div class="telefono01">
+                            <label for="telefono">Télefono:</label><br>
+                            <input type="tel" id="telefonof" name="telefonof" >
+                        </div>
+                        <div class="correo01">
+                        <label for="emailf">Correo Electrónico:</label><br>
+                        <input type="email" id="emailf" name="emailf" pattern=".+@globex.com" size="30" >
+                        </div>
+                    </fieldset>
+
+                    <div class="formulario-grupo oculto" id="registro-error">
+				    <div class="alerta alerta-rojo alerta-pequenia" id="registro-mensaje">Error</div>
+			         </div>
+
+                    <div class="botones">
+                    <input class="guardar"
+                    type="submit" 
+                    value="Guardar" 
+                    onclick="registro_ajax(
+                        nombre.value, 
+                        usuario.value,
+                        email.value,
+                        pass1.value,
+                        pass2.value,
+                        telefono.value,
+                        genero.value,
+                        estudios.value,
+                        nacimiento.value,
+                        direccion.value,
+                        diagnostico.value,
+                        citer.value,
+                        nombref.value,
+                        telefonof.value,
+                        emailf.value
+                        );">
+                    <input class="cancelar" type="reset" value="Cancelar">
+                    </div>
+                </form>
+            </section>
+        </main>
+        </div>
+        <script src="<?php echo $dato[0]; ?>js/efectos.js"></script>
+        <script src="<?php echo $dato[0]; ?>js/base.js"></script>
+    </body>
+</html>

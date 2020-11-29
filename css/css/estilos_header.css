@@ -1,0 +1,42 @@
+@charset "UTF-8";
+*{
+     box-sizing:border-box; 
+   }
+   body{
+    font-family: 'Montserrat', sans-serif;
+    color: #052942;
+    margin: 0%;
+    font-size: 62.5%;
+}
+img{
+    width: 100%;
+}
+
+/*FONTS*/
+
+
+
+body .body{
+    min-width: 1024px;
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-content: center;
+}
+body .main-head{
+    padding: 10% 9% 3% 9%;
+    grid-column: 1/2;
+    grid-row: 1/5; 
+    background-color: white;
+    box-shadow: 4px 1px 8px 0px rgba(0,0,0,0.11);
+}
+.titulo-citer{
+    display: none;
+}
+
+/*FONTS*/
+
+li{
+    font-size: 2.3em;
+}
+
